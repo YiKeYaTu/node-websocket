@@ -19,3 +19,13 @@
     })
 
 ````
+# 前端
+
+- 使用html5 WebSocket原生对象进行连接
+````javascript
+    var ws = new WebSocket('ws:localhost:8080')
+    ws.onmessage = function(msg) {
+        console.log(msg)
+    }
+````
+    
