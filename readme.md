@@ -11,13 +11,12 @@
     var Server = require('node-websocket')(http)
     Server.on('connection', function(socket) {
         socket.on('data', function(msg) {
-            socket.send({
-                msg: 'hello' + msg.PayloadData
+            socket.sendOthers({
+                msg: 'hello and there is a message from ' + socket.id + ': ' + msg.PayloadData
             })
-            console.log(msg)
         })
     })
-
+    http.listen(8080)
 ````
 # 前端
 
