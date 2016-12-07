@@ -11,9 +11,7 @@
     var Server = require('node-websocket')(http)
     Server.on('connection', function(socket) {
         socket.on('data', function(msg) {
-            socket.sendOthers({
-                msg: 'hello and there is a message from ' + socket.id + ': ' + msg.PayloadData
-            })
+            socket.sendOthers('hello and there is a message from ' + socket.id + ': ' + msg.PayloadData)
         })
     })
     http.listen(8080)
